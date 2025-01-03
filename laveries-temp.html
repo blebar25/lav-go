@@ -1,0 +1,33 @@
+<!-- Template pour une laverie -->
+<div class="col-md-4 mb-4">
+    <div class="laverie-card">
+        <div id="carousel{ID}" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel{ID}" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carousel{ID}" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carousel{ID}" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f" class="d-block w-100" alt="Laverie 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5" class="d-block w-100" alt="Laverie 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60" class="d-block w-100" alt="Laverie 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel{ID}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel{ID}" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <div class="laverie-info">
+            <h3>{ADDRESS}</h3>
+            <p><a href="https://www.google.com/maps/search/?api=1&query={ENCODED_ADDRESS}" target="_blank">{CITY}, {ZIP}</a></p>
+        </div>
+    </div>
+</div>

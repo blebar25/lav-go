@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'custom-icons';
+    src: url('../fonts/custom-icons.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-washer:before {
+    content: '\e800';
+    font-family: 'custom-icons';
+}
+
+.icon-timer:before {
+    content: '\e801';
+    font-family: 'custom-icons';
+}

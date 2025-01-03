@@ -1,0 +1,783 @@
+:root {
+    --primary-color: #7C4DFF;
+    --secondary-color: #6200EA;
+    --light-gray: #f8f9fa;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+/* Navigation */
+.navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    background: transparent;
+}
+
+.navbar-brand {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.navbar-brand:hover {
+    color: var(--text-color);
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 400;
+    margin: 0 1rem;
+}
+
+.btn-help {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    height: 2.5rem;
+    padding: 0 1rem;
+    background-color: white;
+    color: black !important;
+    border: 1px solid white;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-help:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-light {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000 !important;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    padding: 100px 0;
+    margin-top: -76px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-link:hover {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Hero Button */
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    height: 40px;
+    padding: 0.5rem 1rem;
+    background-color: #262626;
+    color: white;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-button:hover {
+    background-color: #404040;
+    color: white;
+    text-decoration: none;
+}
+
+.hero-button:focus-visible {
+    outline: none;
+    ring: 2px solid #262626;
+    ring-offset: 2px;
+}
+
+.hero-button:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Services Section */
+.service-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Comment ça marche Section */
+.step-card {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+/* Reservation Form */
+.reservation-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-control {
+    padding: 0.75rem;
+    border-radius: 5px;
+}
+
+/* Contact Section */
+#contact i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* Tarifs Section */
+.tarifs-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.tarifs-section h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.tarif-card {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.tarif-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.tarif-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.tarif-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.tarif-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tarif-icon {
+    margin-bottom: 1rem;
+}
+
+.tarif-icon svg {
+    width: 32px;
+    height: 32px;
+    color: #333;
+    margin: 0 auto;
+    display: block;
+}
+
+.tarif-card h3 {
+    color: #333;
+}
+
+.tarif-card .price {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.pricing-card {
+    width: 256px;
+    height: 192px;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+/* Typography */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #262626;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #525252;
+    margin-bottom: 2rem;
+}
+
+/* Utility Classes */
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.text-estate-800 {
+    color: #1a1a1a;
+}
+
+.text-estate-600 {
+    color: #4a4a4a;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-12 {
+    margin-bottom: 3rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.max-w-3xl {
+    max-width: 48rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.bg-estate-100 {
+    background-color: #f5f5f5;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Laundry cards */
+.laverie-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: auto;
+    max-width: 380px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.laverie-card:hover {
+    transform: translateY(-5px);
+}
+
+.laverie-info {
+    padding: 1.5rem;
+}
+
+.laverie-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #262626;
+}
+
+.laverie-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Carousel styling */
+.carousel-item img {
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Map Section */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Entrepreneur Section */
+.entrepreneur-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.entrepreneur-container {
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    padding: 60px 30px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.entrepreneur-container h2 {
+    color: #262626;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.entrepreneur-container p {
+    color: #525252;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entrepreneur-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Entrepreneurs Section */
+.entrepreneurs-section {
+    padding: 100px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.entrepreneurs-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.entrepreneurs-section .section-description {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.btn-dark {
+    background-color: #222;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Itinerary button */
+.btn-itineraire {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: #262626;
+    border: 1px solid #262626;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-itineraire:hover {
+    background: #007bff;
+    border-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-itineraire i {
+    font-size: 14px;
+}
+
+/* Social buttons */
+.social-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* Button styles */
+.btn-savoir-plus,
+.btn-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-savoir-plus {
+    background-color: #262626;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-savoir-plus:hover {
+    background-color: #404040;
+    color: #fff;
+}
+
+.btn-savoir-plus.btn-light {
+    background-color: #fff;
+    color: #262626;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 135px;
+    height: 40px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.btn-savoir-plus.btn-light i {
+    font-size: 14px;
+}
+
+.btn-savoir-plus.btn-light:hover {
+    background-color: #f8f8f8;
+    color: #262626;
+}
+
+.btn-linkedin {
+    background-color: #0077b5;
+    color: #fff;
+}
+
+.btn-linkedin:hover {
+    background-color: #006396;
+    color: #fff;
+}
+
+.btn-linkedin i {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #262626;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+    color: #ffffff;
+}
+
+footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+footer p {
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #e0e0e0;
+}
+
+.footer-contact i {
+    margin-right: 0.5rem;
+    color: #007bff;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .service-card, .step-card {
+        margin-bottom: 2rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .navbar {
+        background: rgba(0,0,0,0.8);
+    }
+    
+    .tarif-card {
+        margin-bottom: 2rem;
+    }
+    
+    .tarifs-section {
+        padding: 60px 0;
+    }
+    
+    .laveries-section {
+        padding: 60px 0;
+    }
+    
+    .location-card {
+        margin-bottom: 1rem;
+    }
+    
+    .entrepreneurs-section {
+        padding: 60px 0;
+    }
+
+    .footer {
+        padding: 60px 0 30px;
+    }
+
+    .footer h3, .footer h4 {
+        margin-top: 2rem;
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

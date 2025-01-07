@@ -476,42 +476,131 @@ h2 {
 
 /* Entrepreneur Section */
 .entrepreneur-section {
-    padding: 80px 0;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #333;
+}
+
+.entrepreneur-content {
     position: relative;
+    z-index: 1;
 }
 
-.entrepreneur-container {
-    background: transparent;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 24px;
-    padding: 60px 30px;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 1000px;
+.entrepreneur-text {
+    padding-right: 40px;
 }
 
-.entrepreneur-container h2 {
-    color: #262626;
+.section-title {
     font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1.5rem;
-    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
 }
 
-.entrepreneur-container p {
-    color: #525252;
+.section-description {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
     line-height: 1.6;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.entrepreneur-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.feature-item span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
 }
 
 .entrepreneur-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-linkedin {
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #0077b5;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-linkedin:hover {
+    background-color: #006396;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.entrepreneur-image img {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.entrepreneur-image img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 991px) {
+    .entrepreneur-text {
+        padding-right: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .entrepreneur-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .entrepreneur-buttons {
+        justify-content: center;
+    }
 }
 
 /* Entrepreneurs Section */

@@ -17,33 +17,48 @@
             --primary-color: #2196F3 !important;
             --secondary-color: #03A9F4 !important;
             --accent-color: #00BCD4 !important;
+            --dark-text: #1565C0 !important;  /* Bleu foncé pour le texte */
+            --light-bg: #E3F2FD !important;   /* Bleu très clair pour certains fonds */
         }
         .hero {
-            background: linear-gradient(rgba(3, 169, 244, 0.7), rgba(0, 188, 212, 0.7)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363") !important;
+            background: linear-gradient(rgba(3, 169, 244, 0.85), rgba(0, 188, 212, 0.85)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363") !important;
         }
         .btn-primary {
             background-color: #2196F3 !important;
             border-color: #2196F3 !important;
+            color: white !important;
         }
         .btn-primary:hover {
-            background-color: #03A9F4 !important;
-            border-color: #03A9F4 !important;
+            background-color: #1976D2 !important;  /* Bleu plus foncé au survol */
+            border-color: #1976D2 !important;
         }
         .section-title, h2 {
-            color: #2196F3 !important;
+            color: #1565C0 !important;  /* Bleu foncé pour meilleure lisibilité */
         }
-        .section-description, p {
-            color: #03A9F4 !important;
+        .section-description {
+            color: #1565C0 !important;  /* Bleu foncé pour meilleure lisibilité */
+        }
+        p {
+            color: #1976D2 !important;  /* Bleu moyen pour le texte normal */
         }
         footer {
             background-color: #2196F3 !important;
+            color: white !important;
+        }
+        footer p, footer h3 {
+            color: white !important;
         }
         .service-card {
+            background-color: #E3F2FD !important;  /* Fond bleu très clair */
             border: 1px solid #03A9F4 !important;
             box-shadow: 0 4px 6px rgba(3, 169, 244, 0.2) !important;
         }
         .service-card:hover {
+            background-color: white !important;
             box-shadow: 0 6px 8px rgba(3, 169, 244, 0.3) !important;
+        }
+        .service-card p {
+            color: #1976D2 !important;
         }
         .btn-help {
             background-color: #00BCD4 !important;
@@ -51,17 +66,18 @@
             color: white !important;
         }
         .btn-help:hover {
-            background-color: #03A9F4 !important;
-            border-color: #03A9F4 !important;
+            background-color: #0097A7 !important;  /* Cyan plus foncé au survol */
+            border-color: #0097A7 !important;
         }
         .contact-link {
-            color: #00BCD4 !important;
+            color: white !important;
         }
         .contact-link:hover {
-            color: #03A9F4 !important;
+            color: #E3F2FD !important;
         }
         .price {
-            color: #2196F3 !important;
+            color: #1565C0 !important;
+            font-weight: bold !important;
         }
         .btn-itineraire {
             background-color: #03A9F4 !important;
@@ -69,11 +85,21 @@
             color: white !important;
         }
         .btn-itineraire:hover {
-            background-color: #00BCD4 !important;
-            border-color: #00BCD4 !important;
+            background-color: #0288D1 !important;  /* Bleu plus foncé au survol */
+            border-color: #0288D1 !important;
         }
         #map {
             border: 2px solid #03A9F4 !important;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .tarif-card, .pricing-card {
+            background-color: #E3F2FD !important;
+            border: 1px solid #03A9F4 !important;
+        }
+        .tarif-card:hover, .pricing-card:hover {
+            background-color: white !important;
         }
     </style>
 </head>

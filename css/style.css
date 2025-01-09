@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #7C4DFF;
-    --secondary-color: #6200EA;
-    --light-gray: #f8f9fa;
+    --primary-color: #2196F3;  /* Bleu vif pour les éléments principaux */
+    --secondary-color: #03A9F4;  /* Bleu clair pour les éléments secondaires */
+    --accent-color: #00BCD4;  /* Bleu-cyan pour les accents */
     --text-color: #ffffff;
+    --light-gray: #f8f9fa;
 }
 
 body {
@@ -91,7 +92,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363");
+    background: linear-gradient(rgba(3, 169, 244, 0.7), rgba(0, 188, 212, 0.7)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -185,7 +186,7 @@ body {
     padding: 2rem;
     border-radius: 10px;
     background: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(3, 169, 244, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -254,7 +255,7 @@ body {
 .section-description {
     max-width: 800px;
     margin: 0 auto 50px;
-    color: #666;
+    color: var(--primary-color);
     font-size: 1.1rem;
     line-height: 1.6;
     text-align: center;
@@ -567,8 +568,8 @@ h2 {
 }
 
 .btn-itineraire:hover {
-    background: #007bff;
-    border-color: #007bff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
     color: white;
     text-decoration: none;
 }

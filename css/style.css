@@ -643,7 +643,7 @@ h2 {
 
 .btn-savoir-plus.btn-light {
     background-color: lightskyblue;
-    color: var(--primary-color);
+    color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     width: 170px;
     height: 40px;
@@ -660,7 +660,7 @@ h2 {
 
 .btn-savoir-plus.btn-light:hover {
     background-color: lightskyblue;
-    color: var(--primary-color);
+    color: white;
 }
 
 .btn-linkedin {

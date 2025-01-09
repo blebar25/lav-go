@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #2196F3;  /* Bleu vif */
+    --primary-color: #2196F3;    /* Bleu vif */
     --secondary-color: #03A9F4;  /* Bleu clair */
-    --accent-color: #00BCD4;  /* Bleu-cyan */
-    --light-gray: #f8f9fa;
+    --accent-color: #00BCD4;     /* Bleu-cyan */
     --text-color: #ffffff;
+    --light-gray: #f8f9fa;
 }
 
 body {
@@ -52,15 +52,16 @@ body {
     font-weight: 500;
     height: 2.5rem;
     padding: 0 1rem;
-    background-color: white;
-    color: black !important;
-    border: 1px solid white;
+    background-color: var(--accent-color);
+    color: white !important;
+    border: 1px solid var(--accent-color);
     transition: background-color 0.2s ease;
     text-decoration: none;
 }
 
 .btn-help:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -73,15 +74,21 @@ body {
 }
 
 .btn-light {
-    background: rgba(255, 255, 255, 0.9);
-    color: #000 !important;
+    background: var(--secondary-color);
+    color: white !important;
     border-radius: 4px;
     padding: 0.5rem 1rem;
+}
+
+.btn-light:hover {
+    background: var(--accent-color);
+    color: white !important;
 }
 
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    color: white;
 }
 
 .btn-primary:hover {
@@ -133,7 +140,7 @@ body {
 }
 
 .contact-link {
-    color: var(--text-color);
+    color: var(--accent-color);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -141,7 +148,7 @@ body {
 }
 
 .contact-link:hover {
-    color: var(--text-color);
+    color: var(--secondary-color);
     opacity: 0.8;
 }
 
@@ -188,10 +195,12 @@ body {
     background: white;
     box-shadow: 0 4px 6px rgba(3, 169, 244, 0.2);
     transition: transform 0.3s ease;
+    border: 1px solid var(--secondary-color);
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 6px 8px rgba(3, 169, 244, 0.3);
 }
 
 .service-card i {
@@ -250,6 +259,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    color: var(--primary-color);
 }
 
 .section-description {
@@ -267,6 +277,7 @@ body {
     border-radius: 0.5rem;
     text-align: center;
     animation: fadeIn 0.5s ease-out forwards;
+    border: 1px solid var(--secondary-color);
 }
 
 .tarif-card:nth-child(1) {
@@ -314,7 +325,7 @@ body {
 
 .tarif-card .price {
     font-size: 1.5rem;
-    color: #333;
+    color: var(--primary-color);
     margin: 0;
 }
 
@@ -327,20 +338,31 @@ body {
     text-align: center;
     transition: transform 0.3s ease;
     margin: 0 auto;
+    border: 1px solid var(--secondary-color);
+}
+
+.pricing-card:hover {
+    border-color: var(--primary-color);
+}
+
+.pricing-card .price {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
 }
 
 /* Typography */
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
-    color: #262626;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .section-subtitle {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
-    color: #525252;
+    color: var(--secondary-color);
     margin-bottom: 2rem;
 }
 
@@ -439,6 +461,7 @@ h2 {
     max-width: 380px;
     margin: 0 auto;
     transition: transform 0.3s ease;
+    border: 1px solid var(--secondary-color);
 }
 
 .laverie-card:hover {
@@ -473,6 +496,7 @@ h2 {
     border-radius: 12px;
     margin-bottom: 2rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid var(--secondary-color);
 }
 
 /* Entrepreneur Section */
@@ -492,14 +516,14 @@ h2 {
 }
 
 .entrepreneur-container h2 {
-    color: #262626;
+    color: var(--primary-color);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
 }
 
 .entrepreneur-container p {
-    color: #525252;
+    color: var(--secondary-color);
     font-size: 1.1rem;
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -526,12 +550,13 @@ h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     font-weight: 400;
+    color: var(--primary-color);
 }
 
 .entrepreneurs-section .section-description {
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: #666;
+    color: var(--secondary-color);
     font-size: 1.1rem;
     line-height: 1.6;
 }
@@ -557,9 +582,9 @@ h2 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: transparent;
-    color: #262626;
-    border: 1px solid #262626;
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 14px;
@@ -600,7 +625,7 @@ h2 {
 }
 
 .btn-savoir-plus {
-    background-color: #262626;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -612,13 +637,13 @@ h2 {
 }
 
 .btn-savoir-plus:hover {
-    background-color: #404040;
+    background-color: var(--secondary-color);
     color: #fff;
 }
 
 .btn-savoir-plus.btn-light {
     background-color: #fff;
-    color: #262626;
+    color: var(--primary-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     width: 170px;
     height: 40px;
@@ -635,7 +660,7 @@ h2 {
 
 .btn-savoir-plus.btn-light:hover {
     background-color: #f8f8f8;
-    color: #262626;
+    color: var(--primary-color);
 }
 
 .btn-linkedin {

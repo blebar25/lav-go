@@ -14,92 +14,151 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         :root {
-            --primary-color: #2196F3 !important;
-            --secondary-color: #03A9F4 !important;
-            --accent-color: #00BCD4 !important;
-            --dark-text: #1565C0 !important;  /* Bleu foncé pour le texte */
-            --light-bg: #E3F2FD !important;   /* Bleu très clair pour certains fonds */
+            --primary-color: #1976D2 !important;     /* Bleu plus foncé pour meilleur contraste */
+            --secondary-color: #4FC3F7 !important;   /* Bleu ciel lumineux */
+            --accent-color: #00BCD4 !important;      /* Cyan */
+            --dark-text: #0D47A1 !important;         /* Bleu très foncé pour texte */
+            --light-bg: #E1F5FE !important;          /* Bleu très clair lumineux */
+            --white-text: #FFFFFF !important;        /* Blanc pur pour texte sur fond foncé */
         }
+        
+        body {
+            background-color: #FAFEFF !important;    /* Fond légèrement bleuté */
+        }
+        
         .hero {
-            background: linear-gradient(rgba(3, 169, 244, 0.85), rgba(0, 188, 212, 0.85)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363") !important;
+            background: linear-gradient(rgba(25, 118, 210, 0.92), rgba(0, 188, 212, 0.92)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363") !important;
         }
+        
+        .hero h1, .hero p {
+            color: var(--white-text) !important;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2) !important;
+        }
+        
         .btn-primary {
-            background-color: #2196F3 !important;
-            border-color: #2196F3 !important;
-            color: white !important;
+            background-color: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+            color: var(--white-text) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
         }
+        
         .btn-primary:hover {
-            background-color: #1976D2 !important;  /* Bleu plus foncé au survol */
-            border-color: #1976D2 !important;
+            background-color: #1565C0 !important;    /* Encore plus foncé au survol */
+            border-color: #1565C0 !important;
         }
+        
         .section-title, h2 {
-            color: #1565C0 !important;  /* Bleu foncé pour meilleure lisibilité */
+            color: var(--dark-text) !important;
+            font-weight: 600 !important;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.05) !important;
         }
+        
         .section-description {
-            color: #1565C0 !important;  /* Bleu foncé pour meilleure lisibilité */
+            color: #1565C0 !important;              /* Bleu foncé mais pas trop */
+            font-weight: 500 !important;
         }
+        
         p {
-            color: #1976D2 !important;  /* Bleu moyen pour le texte normal */
+            color: #0D47A1 !important;              /* Bleu très foncé pour lisibilité */
         }
+        
         footer {
-            background-color: #2196F3 !important;
-            color: white !important;
+            background-color: var(--primary-color) !important;
+            color: var(--white-text) !important;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
         }
+        
         footer p, footer h3 {
-            color: white !important;
+            color: var(--white-text) !important;
         }
+        
         .service-card {
-            background-color: #E3F2FD !important;  /* Fond bleu très clair */
-            border: 1px solid #03A9F4 !important;
-            box-shadow: 0 4px 6px rgba(3, 169, 244, 0.2) !important;
+            background-color: var(--light-bg) !important;
+            border: 2px solid var(--secondary-color) !important;
+            box-shadow: 0 4px 6px rgba(25, 118, 210, 0.15) !important;
         }
+        
         .service-card:hover {
             background-color: white !important;
-            box-shadow: 0 6px 8px rgba(3, 169, 244, 0.3) !important;
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 6px 12px rgba(25, 118, 210, 0.2) !important;
         }
+        
         .service-card p {
-            color: #1976D2 !important;
+            color: #1565C0 !important;
         }
+        
         .btn-help {
-            background-color: #00BCD4 !important;
-            border-color: #00BCD4 !important;
-            color: white !important;
+            background-color: var(--accent-color) !important;
+            border-color: var(--accent-color) !important;
+            color: var(--white-text) !important;
+            font-weight: 500 !important;
         }
+        
         .btn-help:hover {
-            background-color: #0097A7 !important;  /* Cyan plus foncé au survol */
+            background-color: #0097A7 !important;
             border-color: #0097A7 !important;
         }
+        
         .contact-link {
-            color: white !important;
+            color: var(--white-text) !important;
+            font-weight: 500 !important;
         }
+        
         .contact-link:hover {
-            color: #E3F2FD !important;
+            color: var(--light-bg) !important;
         }
+        
         .price {
-            color: #1565C0 !important;
-            font-weight: bold !important;
+            color: var(--primary-color) !important;
+            font-weight: 700 !important;
+            font-size: 1.2em !important;
         }
+        
         .btn-itineraire {
-            background-color: #03A9F4 !important;
-            border-color: #03A9F4 !important;
-            color: white !important;
+            background-color: var(--secondary-color) !important;
+            border-color: var(--secondary-color) !important;
+            color: var(--dark-text) !important;
+            font-weight: 500 !important;
         }
+        
         .btn-itineraire:hover {
-            background-color: #0288D1 !important;  /* Bleu plus foncé au survol */
-            border-color: #0288D1 !important;
+            background-color: var(--accent-color) !important;
+            border-color: var(--accent-color) !important;
+            color: var(--white-text) !important;
         }
+        
         #map {
-            border: 2px solid #03A9F4 !important;
+            border: 3px solid var(--secondary-color) !important;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.15) !important;
         }
+        
         .navbar-brand, .nav-link {
-            color: white !important;
+            color: var(--white-text) !important;
+            font-weight: 500 !important;
         }
+        
         .tarif-card, .pricing-card {
-            background-color: #E3F2FD !important;
-            border: 1px solid #03A9F4 !important;
+            background-color: var(--light-bg) !important;
+            border: 2px solid var(--secondary-color) !important;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.15) !important;
         }
+        
         .tarif-card:hover, .pricing-card:hover {
             background-color: white !important;
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 6px 12px rgba(25, 118, 210, 0.2) !important;
+        }
+
+        .btn-savoir-plus.btn-light {
+            background-color: var(--secondary-color) !important;
+            color: var(--dark-text) !important;
+            font-weight: 500 !important;
+        }
+
+        .btn-savoir-plus.btn-light:hover {
+            background-color: var(--accent-color) !important;
+            color: var(--white-text) !important;
         }
     </style>
 </head>

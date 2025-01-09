@@ -13,11 +13,67 @@
     <link rel="stylesheet" href="css/custom-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
+        :root {
+            --primary-color: #2196F3 !important;
+            --secondary-color: #03A9F4 !important;
+            --accent-color: #00BCD4 !important;
+        }
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                       url("https://images.unsplash.com/photo-1527576539890-dfa815648363") !important;
-            background-size: cover !important;
-            background-position: center !important;
+            background: linear-gradient(rgba(3, 169, 244, 0.7), rgba(0, 188, 212, 0.7)), url("https://images.unsplash.com/photo-1527576539890-dfa815648363") !important;
+        }
+        .btn-primary {
+            background-color: #2196F3 !important;
+            border-color: #2196F3 !important;
+        }
+        .btn-primary:hover {
+            background-color: #03A9F4 !important;
+            border-color: #03A9F4 !important;
+        }
+        .section-title, h2 {
+            color: #2196F3 !important;
+        }
+        .section-description, p {
+            color: #03A9F4 !important;
+        }
+        footer {
+            background-color: #2196F3 !important;
+        }
+        .service-card {
+            border: 1px solid #03A9F4 !important;
+            box-shadow: 0 4px 6px rgba(3, 169, 244, 0.2) !important;
+        }
+        .service-card:hover {
+            box-shadow: 0 6px 8px rgba(3, 169, 244, 0.3) !important;
+        }
+        .btn-help {
+            background-color: #00BCD4 !important;
+            border-color: #00BCD4 !important;
+            color: white !important;
+        }
+        .btn-help:hover {
+            background-color: #03A9F4 !important;
+            border-color: #03A9F4 !important;
+        }
+        .contact-link {
+            color: #00BCD4 !important;
+        }
+        .contact-link:hover {
+            color: #03A9F4 !important;
+        }
+        .price {
+            color: #2196F3 !important;
+        }
+        .btn-itineraire {
+            background-color: #03A9F4 !important;
+            border-color: #03A9F4 !important;
+            color: white !important;
+        }
+        .btn-itineraire:hover {
+            background-color: #00BCD4 !important;
+            border-color: #00BCD4 !important;
+        }
+        #map {
+            border: 2px solid #03A9F4 !important;
         }
     </style>
 </head>
@@ -157,7 +213,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                <p>© 2025 Lav&Go. Tous droits réservés.</p>
+                <p> 2025 Lav&Go. Tous droits réservés.</p>
             </div>
         </div>
     </footer>

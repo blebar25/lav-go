@@ -722,11 +722,12 @@
                 { id: 1, name: '30 rue Pinel', city: 'Saint Denis', zip: '93200', lat: 48.9362, lng: 2.3574 },
                 { id: 2, name: '27 rue Ramey', city: 'Paris', zip: '75018', lat: 48.8879, lng: 2.3476 },
                 { id: 3, name: '20 rue de Lancry', city: 'Paris', zip: '75010', lat: 48.8697, lng: 2.3589 },
+                { id: 4, name: '168 rue Saint-Denis', city: 'Paris', zip: '75002', lat: 48.8677, lng: 2.3521 }
             ];
 
             // Initialiser la carte
             const map = L.map('map');
-            
+
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: ' OpenStreetMap contributors'
             }).addTo(map);
@@ -734,47 +735,30 @@
             // Créer un groupe pour les marqueurs
             const markers = L.featureGroup();
 
-            // Ajouter les marqueurs
+            // Ajouter tous les marqueurs
             locations.forEach(location => {
-                const marker = L.marker([location.lat, location.lng]);
+                const marker = L.marker([location.lat, location.lng])
+                    .bindPopup(`<strong>${location.name}</strong><br>${location.city}, ${location.zip}`);
                 markers.addLayer(marker);
             });
 
             // Ajouter le groupe de marqueurs à la carte
             markers.addTo(map);
 
-            // Ajuster le zoom pour voir tous les marqueurs avec un peu de marge
-            map.fitBounds(markers.getBounds().pad(0.2));
+            // Ajuster la vue pour voir tous les marqueurs
+            map.fitBounds(markers.getBounds(), { padding: [50, 50] });
 
             // Générer les cartes de laverie
-            const container = document.getElementById('laveries-container');
-            container.innerHTML = locations.map(location => `
-                <div class="col-md-4 mb-4">
+            const laveriesContainer = document.getElementById('laveries-container');
+            locations.forEach(location => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6';
+                col.innerHTML = `
                     <div class="laverie-card">
-                        <div id="carousel${location.id}" class="carousel slide">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carousel${location.id}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carousel${location.id}" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carousel${location.id}" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f" class="d-block w-100" alt="Laverie 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5" class="d-block w-100" alt="Laverie 2">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60" class="d-block w-100" alt="Laverie 3">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel${location.id}" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carousel${location.id}" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
+                        <div class="map-preview">
+                            <div id="map-${location.id}" style="height: 200px;"></div>
+                            <button class="btn-zoom" onclick="zoomToLocation(${location.lat}, ${location.lng})">
+                                <i class="fas fa-expand-arrows-alt"></i>
                             </button>
                         </div>
                         <div class="laverie-info">
@@ -799,29 +783,32 @@
                             </a>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+                laveriesContainer.appendChild(col);
 
-            // Initialiser les carrousels
-            const carousels = document.querySelectorAll('.carousel');
-            carousels.forEach(carousel => {
-                new bootstrap.Carousel(carousel, {
-                    interval: 5000,
-                    wrap: true,
-                    touch: true
-                });
-            });
+                // Créer une mini-carte pour chaque laverie
+                const miniMap = L.map(`map-${location.id}`, {
+                    zoomControl: false,
+                    dragging: false,
+                    scrollWheelZoom: false
+                }).setView([location.lat, location.lng], 15);
 
-            // Ajouter les événements de clic sur les marqueurs
-            markers.eachLayer(marker => {
-                marker.bindPopup(`
-                    <strong>${marker.feature.properties.name}</strong><br>
-                    ${marker.feature.properties.city}, ${marker.feature.properties.zip}<br>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(marker.feature.properties.name + ' ' + marker.feature.properties.zip + ' ' + marker.feature.properties.city)}" 
-                       target="_blank">Obtenir l'itinéraire</a>
-                `);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: ''
+                }).addTo(miniMap);
+
+                L.marker([location.lat, location.lng]).addTo(miniMap);
             });
         });
+
+        // Fonction pour zoomer sur une location spécifique
+        function zoomToLocation(lat, lng) {
+            const map = document.querySelector('#map')?._leaflet_map;
+            if (map) {
+                map.setView([lat, lng], 16);
+                document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>

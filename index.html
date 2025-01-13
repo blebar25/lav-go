@@ -420,24 +420,14 @@
             font-size: 1rem;
         }
 
-        .laverie-status {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        /* Style pour les icônes du footer */
+        footer .social-icons i {
+            color: white !important;
+            transition: opacity 0.3s ease;
         }
 
-        .laverie-status.open {
-            background: rgba(72, 187, 120, 0.1);
-            color: #48bb78;
-        }
-
-        .laverie-status.closed {
-            background: rgba(245, 101, 101, 0.1);
-            color: #f56565;
+        footer .social-icons i:hover {
+            opacity: 0.8;
         }
 
         /* Styles pour la section entrepreneurs */
@@ -774,7 +764,6 @@
                             </button>
                         </div>
                         <div class="laverie-info">
-                            <span class="laverie-status open">Ouvert</span>
                             <h3 class="laverie-name">${location.name}</h3>
                             <p class="laverie-address">${location.city}, ${location.zip}</p>
                             

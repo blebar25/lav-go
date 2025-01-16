@@ -129,8 +129,14 @@
         }
         
         #map {
-            border: 3px solid var(--secondary-color) !important;
-            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.15) !important;
+            border-radius: 25px;
+            border: 2px solid rgba(135, 206, 235, 0.6);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .leaflet-container {
+            border-radius: 25px;
         }
         
         .navbar-brand, .nav-link {
@@ -263,46 +269,50 @@
         /* Styles pour la section tarifs */
         .pricing-card {
             background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
+            overflow: visible;
             position: relative;
-            overflow: hidden;
-            height: 100%;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
+            height:auto;
         }
-
+        
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-
-        .pricing-card::before {
-            content: '';
+        
+        .location-badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #2c5282, #4299e1);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px -2px rgba(66, 153, 225, 0.3);
+            z-index: 10;
         }
-
-        .pricing-card h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+        
+        .pricing-icon {
+            background: rgba(66, 153, 225, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+            display: inline-flex;
+            color: #2c5282;
         }
-
-        .pricing-card .price {
-            font-size: 2.5rem;
+        
+        .pricing-amount {
+            color: #2c5282;
+            font-size: 2rem;
             font-weight: 700;
-            color: #333;
-            margin: 1rem 0;
+            margin: 16px 0;
         }
-
+        
         /* Styles pour la section laveries */
         #map {
             border-radius: 20px;
@@ -313,111 +323,82 @@
             opacity: 0;
             animation: scaleIn 0.6s ease forwards;
         }
-
+        
         .laverie-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(25, 118, 210, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-
-        .laverie-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
+        
         .laverie-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(25, 118, 210, 0.15);
-            border-color: rgba(25, 118, 210, 0.2);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .laverie-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .laverie-card:hover::before {
-            opacity: 1;
+        .laverie-card .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
         }
 
-        .laverie-card .laverie-name {
-            color: var(--primary-color);
-            font-size: 1.5rem;
+        .laverie-card h4 {
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            color: #2d3748;
+            /* Limiter à 2 lignes */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.8em;
         }
 
-        .laverie-card .laverie-name::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background: var(--primary-color);
-            border-radius: 50%;
-        }
-
-        .laverie-card .laverie-address {
-            color: #6c757d;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .laverie-card .laverie-details {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(25, 118, 210, 0.1);
-        }
-
-        .laverie-card .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .laverie-card p {
             color: #4a5568;
-        }
-
-        .laverie-card .detail-item i {
-            color: var(--secondary-color);
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            flex: 1;
+            /* Limiter à 2 lignes */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.8em;
+            font-size: 13px;
         }
 
         .laverie-card .btn-directions {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            margin-top: auto;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #3182ce;
             color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.2);
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
         }
 
         .laverie-card .btn-directions:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+            background-color: #2c5282;
         }
 
-        .laverie-card .btn-directions i {
-            font-size: 1rem;
+        .col-md-4 {
+            margin-bottom: 2rem;
         }
 
         /* Style pour les icônes du footer */
@@ -425,11 +406,11 @@
             color: white !important;
             transition: opacity 0.3s ease;
         }
-
+        
         footer .social-icons i:hover {
             opacity: 0.8;
         }
-
+        
         /* Styles pour la section entrepreneurs */
         .service-box {
             background: white;
@@ -444,12 +425,12 @@
             opacity: 0;
             animation: fadeInUp 0.6s ease forwards;
         }
-
+        
         .service-box:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
-
+        
         .service-box::after {
             content: '';
             position: absolute;
@@ -462,23 +443,23 @@
             transition: transform 0.3s ease;
             transform-origin: left;
         }
-
+        
         .service-box:hover::after {
             transform: scaleX(1);
         }
-
+        
         .service-icon {
             font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
-
+        
         .service-box:hover .service-icon {
             transform: scale(1.1);
             color: var(--secondary-color);
         }
-
+        
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -490,7 +471,7 @@
                 opacity: 1;
             }
         }
-
+        
         @keyframes scaleIn {
             from {
                 transform: scale(0.95);
@@ -501,7 +482,7 @@
                 opacity: 1;
             }
         }
-
+        
         @keyframes slideInLeft {
             from {
                 transform: translateX(-20px);
@@ -512,7 +493,7 @@
                 opacity: 1;
             }
         }
-
+        
         /* Boutons stylisés */
         .btn-primary, .btn-outline-primary {
             padding: 12px 30px;
@@ -522,28 +503,203 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
+        
         .btn-primary {
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             border: none;
             box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
         }
-
+        
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(25, 118, 210, 0.4);
         }
-
+        
         .btn-outline-primary {
             border: 2px solid var(--primary-color);
             background: transparent;
             color: var(--primary-color);
         }
-
+        
         .btn-outline-primary:hover {
             background: var(--primary-color);
             color: white;
             transform: translateY(-2px);
+        }
+        
+        .laverie-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .laverie-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-directions {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, #2c5282, #4299e1);
+            color: white;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-directions:hover {
+            background: linear-gradient(135deg, #2a4365, #3182ce);
+            transform: translateY(-1px);
+        }
+
+        .carousel-inner {
+            border-radius: 12px 12px 0 0;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Styles pour le carrousel des villes */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            height: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+        #laveries-list .carousel-inner {
+            overflow: visible;
+        }
+
+        #laveries-list .carousel-item {
+            transition: transform .6s ease-in-out;
+        }
+
+        #laveries-list .row {
+            margin: 0 -15px;
+        }
+
+        /* Ajustement des contrôles pour les carrousels imbriqués */
+        .laverie-card .carousel-control-prev,
+        .laverie-card .carousel-control-next {
+            width: 10%;
+            background: none;
+            height: 100%;
+            top: 0;
+            transform: none;
+        }
+
+        /* Styles pour le popup de la carte */
+        .custom-popup .leaflet-popup-content-wrapper {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+
+        .custom-popup .leaflet-popup-content {
+            margin: 0;
+            min-width: 200px;
+        }
+
+        .popup-content {
+            padding: 16px;
+        }
+
+        .popup-content h4 {
+            color: #2c5282;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .popup-content p {
+            color: #4a5568;
+            margin: 8px 0;
+        }
+
+        .popup-content .btn-directions {
+            margin-top: 8px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .custom-popup .leaflet-popup-tip {
+            background: white;
+        }
+
+        /* Style pour le badge de la laverie */
+        .laverie-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #3182ce, #2c5282);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .laverie-card {
+            position: relative;
+        }
+
+        /* Styles pour le carrousel dans les cartes */
+        .laverie-card .carousel {
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
+
+        .laverie-card .carousel-item img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .laverie-card .carousel-indicators {
+            margin-bottom: 0.5rem;
+        }
+
+        .laverie-card .carousel-indicators button {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin: 0 4px;
+        }
+
+        .laverie-card .carousel-control-prev,
+        .laverie-card .carousel-control-next {
+            width: 15%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .laverie-card .carousel:hover .carousel-control-prev,
+        .laverie-card .carousel:hover .carousel-control-next {
+            opacity: 0.8;
+        }
+
+        .laverie-card .carousel-control-prev-icon,
+        .laverie-card .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            padding: 1rem;
         }
     </style>
 </head>
@@ -570,7 +726,7 @@
                         Nous contacter</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn-savoir-plus btn-light" href="#entrepreneurs">
+                    <a href="#entrepreneurs" class="btn btn-savoir-plus btn-light">
                         Ouvrir une laverie
                     </a>
                 </li>
@@ -593,49 +749,65 @@
 </header>
 
     <!-- Services Section -->
-    <section id="tarifs" class="pricing-section">
+    <section id="tarifs" class="pricing-section py-16 bg-gray-50">
         <div class="container">
-            <h2 class="text-4xl font-display text-estate-800 mb-4 text-center">Nos tarifs</h2>
-            <p class="text-lg text-estate-600 mb-12 text-center max-w-3xl mx-auto">Profitez de machines à laver et séchoirs Electrolux, adaptés à vos besoins et à des prix compétitifs</p>
-            <div class="row justify-content-center">
+            <h2 class="section-title">Nos tarifs</h2>
+            <p class="section-subtitle">Profitez de machines à laver et séchoirs Electrolux, adaptés à vos besoins et à des prix compétitifs</p>
+            <div class="row justify-content-center g-4">
                 <div class="col-md-3">
-                    <div class="pricing-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-8 h-8 mx-auto mb-4 text-estate-800"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2 whitespace-pre-line">Machine à laver<br>
-6 kg<br><span class="text-sm">(Uniquement à Rosiers)</span></h3>
-                        <p class="text-2xl text-estate-800">3,80€</p>
+                    <div class="pricing-card p-6">
+                        <span class="location-badge">Rosiers</span>
+                        <div class="text-center">
+                            <div class="pricing-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-12 h-12"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Machine à laver<br>6 kg</h3>
+                            <p class="pricing-amount">3,80€</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="pricing-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-8 h-8 mx-auto mb-4 text-estate-800"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2 whitespace-pre-line">Machine à laver<br>
-7 kg</h3>
-                        <p class="text-2xl text-estate-800">5,00€</p>
+                    <div class="pricing-card p-6">
+                        <div class="text-center">
+                            <div class="pricing-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-12 h-12"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Machine à laver<br>7 kg</h3>
+                            <p class="pricing-amount">5,00€</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="pricing-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-8 h-8 mx-auto mb-4 text-estate-800"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2 whitespace-pre-line">Machine à laver<br>
-11 kg</h3>
-                        <p class="text-2xl text-estate-800">7,80€</p>
+                    <div class="pricing-card p-6">
+                        <div class="text-center">
+                            <div class="pricing-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-12 h-12"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Machine à laver<br>11 kg</h3>
+                            <p class="pricing-amount">7,80€</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="pricing-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-8 h-8 mx-auto mb-4 text-estate-800"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2 whitespace-pre-line">Machine à laver<br>
-18 kg</h3>
-                        <p class="text-2xl text-estate-800">12,90€</p>
+                    <div class="pricing-card p-6">
+                        <div class="text-center">
+                            <div class="pricing-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-12 h-12"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Machine à laver<br>18 kg</h3>
+                            <p class="pricing-amount">11,90€</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="pricing-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer w-8 h-8 mx-auto mb-4 text-estate-800"><line x1="10" x2="14" y1="2" y2="2"></line><line x1="12" x2="15" y1="14" y2="11"></line><circle cx="12" cy="14" r="8"></circle></svg>
-                        <h3 class="text-xl font-semibold mb-2 whitespace-pre-line">Séchoir<br>
-9 minutes</h3>
-                        <p class="text-2xl text-estate-800">1,50€</p>
+                    <div class="pricing-card p-6">
+                        <div class="text-center">
+                            <div class="pricing-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer w-12 h-12"><line x1="10" x2="14" y1="2" y2="2"></line><line x1="12" x2="15" y1="14" y2="11"></line><circle cx="12" cy="14" r="8"></circle></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Séchoir<br>9 minutes</h3>
+                            <p class="pricing-amount">1,50€</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -648,9 +820,7 @@
             <h2 class="section-title">Nos laveries</h2>
             <p class="section-subtitle">Trouvez la laverie la plus proche de chez vous</p>
             <div id="map"></div>
-            <div class="row" id="laveries-container">
-                <!-- Les cartes de laverie seront générées dynamiquement ici -->
-            </div>
+            <div id="laveries-list"></div>
         </div>
     </section>
 
@@ -720,110 +890,290 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
+        // Fonction globale pour obtenir l'itinéraire
+        function getDirections(destination) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const origin = `${position.coords.latitude},${position.coords.longitude}`;
+                        const encodedDestination = encodeURIComponent(destination);
+                        const url = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodedDestination}&travelmode=driving`;
+                        window.open(url, '_blank');
+                    },
+                    (error) => {
+                        console.error("Erreur de géolocalisation:", error);
+                        const encodedDestination = encodeURIComponent(destination);
+                        const url = `https://www.google.com/maps/dir/?api=1&destination=${encodedDestination}&travelmode=driving`;
+                        window.open(url, '_blank');
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 5000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                const encodedDestination = encodeURIComponent(destination);
+                const url = `https://www.google.com/maps/dir/?api=1&destination=${encodedDestination}&travelmode=driving`;
+                window.open(url, '_blank');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Données des laveries
-            const locations = [
-                { id: 1, name: '30 rue Pinel', city: 'Saint Denis', zip: '93200', lat: 48.9362, lng: 2.3574 },
-                { id: 2, name: '27 rue Ramey', city: 'Paris', zip: '75018', lat: 48.8879, lng: 2.3476 },
-                { id: 3, name: '20 rue de Lancry', city: 'Paris', zip: '75010', lat: 48.8697, lng: 2.3589 },
-                { id: 4, name: '12 rue Popincourt', city: 'Paris', zip: '75011', lat: 48.8589, lng: 2.3741 },
-                { id: 5, name: '3 rue Thiers', city: 'Marseille', zip: '13001', lat: 43.2965, lng: 5.3698 },
-                { id: 6, name: '52 rue des Gravilliers', city: 'Paris', zip: '75004', lat: 48.8637, lng: 2.3542 },
-                { id: 7, name: '122 avenue de Flandre', city: 'Paris', zip: '75019', lat: 48.8912, lng: 2.3745 },
-                { id: 8, name: '14 boulevard de la Fédération', city: 'Marseille', zip: '13004', lat: 43.3025, lng: 5.3892 },
-                { id: 9, name: '3 rue de Douai', city: 'Lille', zip: '59000', lat: 50.6292, lng: 3.0573 },
-                { id: 10, name: '61 place de l\'Hôtel de Ville', city: 'Villeneuve d\'Ascq', zip: '59650', lat: 50.6193, lng: 3.1421 },
-                { id: 11, name: '45 Place de la Victoire', city: 'Tourcoing', zip: '59200', lat: 50.7237, lng: 3.1589 }
+            // Coordonnées des laveries
+            const laveriesData = [
+                {
+                    city: "Paris",
+                    locations: [
+                        {
+                            name: "Laverie Cléry",
+                            address: "67 rue de Clery",
+                            postal: "75002",
+                            coords: [48.8689, 2.3478]
+                        },
+                        {
+                            name: "Laverie Ponceau",
+                            address: "7 rue du Ponceau",
+                            postal: "75002",
+                            coords: [48.8686, 2.3521]
+                        },
+                        {
+                            name: "Laverie Franklin",
+                            address: "7 rue Benjamin Franklin",
+                            postal: "75116",
+                            coords: [48.8589, 2.2847]
+                        }
+                    ]
+                },
+                {
+                    city: "Marseille",
+                    locations: [
+                        {
+                            name: "Laverie Liberté",
+                            address: "20 boulevard de la Liberté",
+                            postal: "13001",
+                            coords: [43.2988, 5.3738]
+                        },
+                        {
+                            name: "Laverie Kleber",
+                            address: "108 rue Kleber Prolongée",
+                            postal: "13002",
+                            coords: [43.3071, 5.3667]
+                        },
+                        {
+                            name: "Laverie Forbin",
+                            address: "51 rue de Forbin",
+                            postal: "13002",
+                            coords: [43.3052, 5.3697]
+                        },
+                        {
+                            name: "Laverie Rosiers",
+                            address: "2 traverse des Rosiers",
+                            postal: "13014",
+                            coords: [43.3319, 5.4011]
+                        },
+                        {
+                            name: "Laverie Barthélémy",
+                            address: "17 rue des 3 frères Barthélémy",
+                            postal: "13006",
+                            coords: [43.2941, 5.3831]
+                        },
+                        {
+                            name: "Laverie Fiolle",
+                            address: "14 rue du docteur Fiolle",
+                            postal: "13006",
+                            coords: [43.2918, 5.3847]
+                        }
+                    ]
+                },
+                {
+                    city: "Métropole Lilloise",
+                    locations: [
+                        {
+                            name: "Laverie Dunkerque",
+                            address: "212 avenue de Dunkerque",
+                            city: "Lambersart",
+                            postal: "59130",
+                            coords: [50.6419, 3.0319]
+                        },
+                        {
+                            name: "Laverie Schuman",
+                            address: "16 rue Robert Schuman",
+                            city: "Mons En Baroeul",
+                            postal: "59370",
+                            coords: [50.6347, 3.0986]
+                        },
+                        {
+                            name: "Laverie du Parc",
+                            address: "20 rue du Parc",
+                            city: "La Madeleine",
+                            postal: "59110",
+                            coords: [50.6556, 3.0667]
+                        },
+                        {
+                            name: "Laverie de Gand",
+                            address: "188 rue de Gand",
+                            city: "Tourcoing",
+                            postal: "59200",
+                            coords: [50.7247, 3.1644]
+                        },
+                        {
+                            name: "Laverie Foch",
+                            address: "170 rue du Maréchal Foch",
+                            city: "Loos",
+                            postal: "59120",
+                            coords: [50.6142, 3.0197]
+                        },
+                        {
+                            name: "Laverie Moroy",
+                            address: "225 rue Pierre Moroy",
+                            city: "Lille",
+                            postal: "59000",
+                            coords: [50.6329, 3.0644]
+                        },
+                        {
+                            name: "Laverie Drapiez",
+                            address: "25 rue du Augustin Drapiez",
+                            city: "Lille",
+                            postal: "59000",
+                            coords: [50.6278, 3.0672]
+                        }
+                    ]
+                }
             ];
 
-            // Générer les cartes de laverie
-            const container = document.getElementById('laveries-container');
-            container.innerHTML = locations.map(location => `
-                <div class="col-md-4 mb-4">
-                    <div class="laverie-card">
-                        <div id="carousel${location.id}" class="carousel slide">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carousel${location.id}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carousel${location.id}" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carousel${location.id}" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f" class="d-block w-100" alt="Laverie 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5" class="d-block w-100" alt="Laverie 2">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60" class="d-block w-100" alt="Laverie 3">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel${location.id}" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carousel${location.id}" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <div class="laverie-info">
-                            <h3 class="laverie-name">${location.name}</h3>
-                            <p class="laverie-address">${location.city}, ${location.zip}</p>
-                            
-                            <div class="laverie-details">
-                                <div class="detail-item">
-                                    <i class="fas fa-washing-machine"></i>
-                                    <span>4 machines</span>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-dryer"></i>
-                                    <span>3 séchoirs</span>
-                                </div>
-                            </div>
-                            
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location.name + ' ' + location.zip + ' ' + location.city)}" 
-                               class="btn-directions" target="_blank">
-                                <i class="fas fa-directions"></i>
-                                <span>Itinéraire</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+            // Initialisation de la carte
+            const map = L.map('map', {
+                zoomControl: true,
+                minZoom: 5,
+                maxZoom: 18
+            }).setView([47.0, 5.0], 5); // Position plus à l'est et zoom plus large
 
-            // Initialiser les carrousels
-            const carousels = document.querySelectorAll('.carousel');
-            carousels.forEach(carousel => {
-                new bootstrap.Carousel(carousel, {
-                    interval: 5000,
-                    wrap: true,
-                    touch: true
-                });
-            });
+            // Ajout des contrôles de zoom en haut à gauche
+            map.zoomControl.setPosition('topleft');
 
-            // Initialiser la carte
-            const map = L.map('map').setView([46.603354, 1.888334], 6); // Centre de la France
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
                 attribution: ' OpenStreetMap contributors'
             }).addTo(map);
 
-            // Ajouter les marqueurs
-            locations.forEach(location => {
-                const marker = L.marker([location.lat, location.lng]).addTo(map);
-                const address = `${location.name}, ${location.city} ${location.zip}`;
-                marker.bindPopup(`
-                    <strong>${location.name}</strong><br>
-                    ${location.city}, ${location.zip}<br>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}" 
-                       target="_blank">Obtenir l'itinéraire</a>
-                `);
+            // Définir les limites de la vue
+            const southWest = L.latLng(30.0, -15.0);
+            const northEast = L.latLng(60.0, 25.0);
+            const bounds = L.latLngBounds(southWest, northEast);
+            map.setMaxBounds(bounds);
+
+            // Ajout des marqueurs pour chaque laverie
+            laveriesData.forEach(cityGroup => {
+                cityGroup.locations.forEach(laverie => {
+                    const marker = L.marker(laverie.coords).addTo(map);
+                    const address = laverie.city ? 
+                        `${laverie.address}, ${laverie.city} ${laverie.postal}` :
+                        `${laverie.address}, ${laverie.postal}`;
+                    
+                    // Création du contenu du popup avec bouton d'itinéraire
+                    const popupContent = document.createElement('div');
+                    popupContent.innerHTML = `
+                        <div class="popup-content">
+                            <h4 class="font-semibold mb-2">${laverie.name}</h4>
+                            <p class="mb-3">${address}</p>
+                            <button onclick="getDirections('${address.replace(/`/g, '\\`')}')" class="btn-directions w-full">
+                                <i class="fas fa-directions mr-2"></i>
+                                Itinéraire
+                            </button>
+                        </div>
+                    `;
+
+                    // Style pour le popup
+                    const customOptions = {
+                        'className': 'custom-popup'
+                    };
+
+                    marker.bindPopup(popupContent, customOptions);
+                });
             });
+
+            // Génération de la liste des laveries dans le HTML
+            const laveriesList = document.getElementById('laveries-list');
+            if (laveriesList) {
+                const allLaveries = laveriesData.flatMap(cityGroup => 
+                    cityGroup.locations.map(laverie => ({
+                        ...laverie,
+                        city: laverie.city || cityGroup.city
+                    }))
+                );
+
+                const gridContainer = document.createElement('div');
+                gridContainer.className = 'row g-4';
+
+                allLaveries.forEach((laverie, index) => {
+                    const address = laverie.city ? 
+                        `${laverie.address}, ${laverie.city} ${laverie.postal}` :
+                        `${laverie.address}, ${laverie.postal}`;
+
+                    // Vérification si c'est la Laverie Rosiers
+                    const isRosiers = laverie.name === "Laverie Rosiers" || 
+                                    (laverie.address === "2 traverse des Rosiers" && laverie.postal === "13014");
+
+                    const cardHtml = `
+                        <div class="col-md-4">
+                            <div class="laverie-card">
+                                ${isRosiers ? '<span class="laverie-badge">6kg</span>' : ''}
+                                <div id="carousel-${index}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carousel-${index}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carousel-${index}" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carousel-${index}" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f" class="d-block w-100" alt="Laverie Image 1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5" class="d-block w-100" alt="Laverie Image 2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60" class="d-block w-100" alt="Laverie Image 3">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${index}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-${index}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                <div class="card-content">
+                                    <h4>${laverie.name}</h4>
+                                    <p>${address}</p>
+                                    <button onclick="getDirections(\`${address.replace(/`/g, '\\`')}\`)" class="btn-directions">
+                                        <i class="fas fa-directions mr-2"></i>
+                                        Itinéraire
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    gridContainer.innerHTML += cardHtml;
+                });
+
+                laveriesList.appendChild(gridContainer);
+
+                // Initialisation des carrousels
+                allLaveries.forEach((_, index) => {
+                    new bootstrap.Carousel(document.querySelector(`#carousel-${index}`), {
+                        interval: 3000
+                    });
+                });
+            }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </body>
 </html>

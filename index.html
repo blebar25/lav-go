@@ -13,6 +13,17 @@
     <link rel="stylesheet" href="css/custom-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
+
+.leaflet-control-attribution a {
+            display: none !important;
+        }
+        .leaflet-control-attribution .leaflet-attribution-flag {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            visibility: hidden !important;
+        }
+        
         :root {
             --primary-color: #1976D2 !important;     /* Bleu plus foncé pour meilleur contraste */
             --secondary-color: #4FC3F7 !important;   /* Bleu ciel lumineux */
@@ -27,7 +38,7 @@
         }
         
         .hero {
-            background: linear-gradient(rgba(3, 169, 244, 0.7), rgba(0, 188, 212, 0.7)), url("/lav-go/images/laverie-mons.jpg") !important;
+            background: linear-gradient(rgba(3, 169, 244, 0.4), rgba(0, 188, 212, 0.4)), url("/images/MONS EN BAROEUL_1.jpg") !important;
                 }
 
         

@@ -99,9 +99,8 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(3, 169, 244, 0.7), rgba(0, 188, 212, 0.7)), url("../images/laverie-mons.jpg");
+    background: linear-gradient(rgba(3, 169, 244, 0.7), rgba(0, 188, 212, 0.7)), url("/lav-go/images/laverie-mons.jpg");
     background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;

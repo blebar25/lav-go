@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/custom-icons.css">
@@ -28,8 +28,11 @@
         }
         
         .hero {
-            background: linear-gradient(rgba(3, 169, 244, 0.4), rgba(0, 188, 212, 0.4)), url("/lav-go/images/MONS EN BAROEUL_1.jpg") !important;
-                }
+            background: linear-gradient(rgba(3, 169, 244, 0.4), rgba(0, 188, 212, 0.4)), url("/lavandgo/images/MONS EN BAROEUL_1.jpg") !important;
+            background-position: center 10%;
+            object-position: center 10%;
+        }
+
 
         
         .hero h1, .hero p {
@@ -709,7 +712,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="#" style="color: white;">
+        <a class="navbar-brand" href="#" style="color: white; font-size: 25px;">
             Lav & Go
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -758,7 +761,7 @@
             <div class="row justify-content-center g-4">
                 <div class="col-md-3">
                     <div class="pricing-card p-6">
-                        <span class="location-badge">Rosiers</span>
+                        <span class="location-badge">Exclusivement</span>
                         <div class="text-center">
                             <div class="pricing-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine w-12 h-12"><path d="M3 6h3"></path><path d="M17 6h.01"></path><rect width="18" height="20" x="3" y="2" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg>
@@ -881,8 +884,8 @@
                 <div class="col-md-4">
                     <h3>Contact</h3>
                     <div class="footer-contact">
-                        <p><i class="fas fa-phone"></i>07 61 38 16 60</p>
-                        <p><i class="fas fa-envelope"></i>Lavexpress9@gmail.com</p>
+                        <p><i class="fas fa-phone" style="color: white;"></i> <a href="tel:+33761381660" style="color: white; text-decoration: none;">07 61 38 16 60</a></p>
+                        <p><i class="fas fa-envelope" style="color: white;"></i> <a href="mailto:Lavexpress9@gmail.com" style="color: white; text-decoration: none;">Lavexpress9@gmail.com</a></p>
                     </div>
                 </div>
             </div>

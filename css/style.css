@@ -641,7 +641,7 @@ h2 {
 }
 
 .btn-savoir-plus.btn-light {
-    background-color: lightskyblue;
+    background-color: #1780c2 !important;
     color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     width: 170px;
@@ -658,7 +658,7 @@ h2 {
 }
 
 .btn-savoir-plus.btn-light:hover {
-    background-color: lightskyblue;
+    background-color: #168fda !important;
     color: white;
 }
 

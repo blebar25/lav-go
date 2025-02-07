@@ -538,7 +538,7 @@
         }
 
         .btn-directions {
-            display: inline-flex;
+            display: block;
             align-items: center;
             justify-content: center;
             padding: 0.75rem 1rem;
@@ -987,9 +987,9 @@
                         <div class="popup-content">
                             <h4 class="font-semibold mb-2">${laverie.name}</h4>
                             <p class="mb-3">${address}</p>
-                            <button onclick="getDirections('${address.replace(/`/g, '\\`')}')" class="btn-directions w-full">
-                                <i class="fas fa-directions mr-2"></i>
-                                Itinéraire
+<button onclick="getDirections('${address.replace(/`/g, '\\`')}')" class="btn-directions w-full" style="place-self: center;">
+    <i class="fas fa-directions mr-2" style="margin-right: 10px;"></i>                
+                Itinéraire
                             </button>
                         </div>
                     `;

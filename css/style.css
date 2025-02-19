@@ -862,13 +862,51 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .service-card {
+        margin-bottom: 2rem;
+    }
+    
+    .feature-section .col-md-4 {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
     }
     
-    .service-card, .step-card {
-        margin-bottom: 2rem;
+    .hero-text {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .navbar {
+        background: var(--primary-color) !important;
+        padding: 1rem 0;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
     }
     
     .contact-info {
@@ -876,137 +914,261 @@ footer p {
         gap: 1rem;
     }
     
-    .navbar {
-        background: rgba(0,0,0,0.8);
+    .feature-image {
+        margin-bottom: 2rem;
+    }
+    
+    .footer-content {
+        text-align: center;
+    }
+    
+    .footer-links {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .btn-primary, .btn-outline-primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .navbar-brand img {
+        max-height: 40px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .service-card i {
+        font-size: 2.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 1rem;
+    }
+    
+    .contact-section {
+        padding: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary, .btn-outline-primary {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .navbar-brand img {
+        max-height: 35px;
+    }
+}
+
+/* Media Queries Supplémentaires */
+@media screen and (max-width: 992px) {
+    .pricing-card {
+        width: 100%;
+        max-width: 256px;
+        margin-bottom: 2rem;
     }
     
     .tarif-card {
         margin-bottom: 2rem;
     }
     
+    .step-card {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-description {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .tarifs-section {
         padding: 60px 0;
     }
     
+    .tarifs-section h2 {
+        font-size: 2rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .reservation-form {
+        padding: 1.5rem;
+    }
+    
+    #contact i {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tarifs-section {
+        padding: 40px 0;
+    }
+    
+    .pricing-card {
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .step-card {
+        padding: 1.5rem;
+    }
+    
+    .reservation-form {
+        padding: 1rem;
+    }
+    
+    .form-control {
+        padding: 0.5rem;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .text-4xl {
+        font-size: 1.75rem;
+    }
+    
+    .text-lg {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustements pour les très petits écrans */
+@media screen and (max-width: 400px) {
+    .tarifs-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .pricing-card .price {
+        font-size: 1.25rem;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    #contact i {
+        font-size: 1.75rem;
+    }
+}
+
+/* Media Queries pour les Laveries et autres sections */
+@media screen and (max-width: 992px) {
     .laveries-section {
         padding: 60px 0;
     }
     
+    .laverie-card {
+        margin-bottom: 2rem;
+    }
+    
     .location-card {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     
     .entrepreneurs-section {
         padding: 60px 0;
     }
+}
 
-    .footer {
-        padding: 60px 0 30px;
+@media screen and (max-width: 768px) {
+    .laverie-card {
+        height: auto;
     }
-
-    .footer h3, .footer h4 {
-        margin-top: 2rem;
+    
+    .laverie-badge, .laverie-badge-2 {
+        font-size: 0.8rem;
+        padding: 4px 8px;
     }
-}
-
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.text-highlight {
-    background-color: lightskyblue;
-    color: white !important;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 500;
-}
-
-.text-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #2c5282, #4299e1);
-    color: white !important;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 500;
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 10px rgba(25, 118, 210, 0.2);
-        transform: scale(1);
+    
+    .location-info {
+        padding: 1rem;
     }
-    50% {
-        text-shadow: 0 0 20px rgba(25, 118, 210, 0.4),
-                     0 0 30px rgba(25, 118, 210, 0.2);
-        transform: scale(1.02);
-    }
-    100% {
-        text-shadow: 0 0 10px rgba(25, 118, 210, 0.2);
-        transform: scale(1);
+    
+    .location-card h3 {
+        font-size: 1.2rem;
     }
 }
 
-.entrepreneur-section .section-title {
-    animation: glow 3s ease-in-out infinite;
-    color: var(--primary-color) !important;
-    display: inline-block;
-    font-weight: 600;
-    position: relative;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.entrepreneur-section .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 2px;
-}
-
-@keyframes shineAndScale {
-    0% {
-        color: #1976D2;
-        transform: scale(1);
-        text-shadow: 0 0 0 rgba(25, 118, 210, 0);
+@media screen and (max-width: 576px) {
+    .laveries-section {
+        padding: 40px 0;
     }
-    50% {
-        color: #2196F3;
-        transform: scale(1.1);
-        text-shadow: 0 0 20px rgba(25, 118, 210, 0.5);
+    
+    .laverie-card {
+        padding: 1rem;
     }
-    100% {
-        color: #1976D2;
-        transform: scale(1);
-        text-shadow: 0 0 0 rgba(25, 118, 210, 0);
+    
+    .location-card {
+        padding: 1rem;
+    }
+    
+    .entrepreneurs-section {
+        padding: 40px 0;
+    }
+    
+    #entrepreneurs h2 {
+        font-size: 2rem;
     }
 }
 
-#entrepreneurs h2 {
-    font-size: 2.8rem;
-    font-weight: bold;
-    text-align: center;
-    animation: shineAndScale 3s ease-in-out infinite;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-#entrepreneurs {
-    text-align: center;
-}
-
-#entrepreneurs .section-title {
-    animation: pulse 2s infinite;
+@media screen and (max-width: 400px) {
+    .laverie-badge, .laverie-badge-2 {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .location-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    #entrepreneurs h2 {
+        font-size: 1.75rem;
+        padding: 10px;
+    }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- Fond circulaire -->
+    <circle cx="256" cy="256" r="256" fill="#2196F3"/>
+    
+    <!-- Machine à laver stylisée -->
+    <g transform="translate(96,96) scale(0.625)">
+        <!-- Corps de la machine -->
+        <rect x="80" y="80" width="340" height="340" rx="20" fill="white"/>
+        
+        <!-- Hublot extérieur -->
+        <circle cx="256" cy="256" r="120" fill="#E1F5FE"/>
+        
+        <!-- Hublot intérieur -->
+        <circle cx="256" cy="256" r="100" fill="#03A9F4"/>
+        
+        <!-- Reflet du hublot -->
+        <path d="M200 186 Q256 236 312 186" stroke="white" stroke-width="12" fill="none"/>
+        
+        <!-- Panneau de contrôle -->
+        <rect x="120" y="100" width="260" height="40" rx="10" fill="#E1F5FE"/>
+        
+        <!-- Boutons -->
+        <circle cx="160" cy="120" r="10" fill="#2196F3"/>
+        <circle cx="200" cy="120" r="10" fill="#2196F3"/>
+        
+        <!-- Ligne d'eau stylisée -->
+        <path d="M176 256 Q256 226 336 256" stroke="white" stroke-width="8" fill="none" opacity="0.6"/>
+        <path d="M176 276 Q256 306 336 276" stroke="white" stroke-width="8" fill="none" opacity="0.6"/>
+    </g>
+</svg>

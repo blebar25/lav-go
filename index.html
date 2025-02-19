@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="mask-icon" href="/images/favicon/favicon.svg" color="#2196F3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Lavand'Go">
+    
     <title>Lavand'Go - Service de Laverie à Domicile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -648,7 +658,7 @@
 </nav>
 
 <!-- Hero Section -->
-<header class="hero">
+<header class="hero" role="banner">
     <div class="container text-center">
         <h1>Lav & Go</h1>
         <p class="hero-text">Votre laverie automatique, proche de chez vous,<br>ouverte de 7H00 à 22H00, 7J/7</p>
@@ -660,7 +670,7 @@
 </header>
 
     <!-- Services Section -->
-    <section id="tarifs" class="pricing-section py-16 bg-gray-50">
+    <section id="tarifs" class="pricing-section py-16 bg-gray-50" role="region" aria-label="Nos tarifs">
         <div class="container">
             <h2 class="section-title">Nos tarifs</h2>
             <p class="section-subtitle">Profitez de machines à laver <span style="font-size: 18px;" class="text-badge">rapides et super essorantes</span> ainsi que de séchoirs Electrolux, adaptés à vos besoins et à des prix compétitifs</p>
@@ -725,7 +735,7 @@
     </section>
 
     <!-- Laveries Section -->
-    <section id="laveries" class="laveries-section">
+    <section id="laveries" class="laveries-section" role="region" aria-label="Nos laveries">
         <div class="container">
             <h2 class="section-title">Nos laveries</h2>
             <p class="section-subtitle">Trouvez la laverie la plus proche de chez vous</p>
@@ -773,7 +783,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -1124,5 +1134,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

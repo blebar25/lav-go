@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Schuman': ['MEB_1.jpg', 'MEB_2.jpg', 'MEB_3.jpg', 'MEB_4.jpg'],
         'Kleber': ['Kleber_1.jpeg', 'Kleber_2.jpeg', 'Kleber_3.jpeg', 'Kleber_4.jpeg', 'Kleber_5.jpeg', 'Kleber_6.jpeg', 'Kleber_7.jpeg', 'Kleber_8.jpeg'],
         'Fiolle': ['Fiolle_1.jpeg', 'Fiolle_2.jpeg', 'Fiolle_3.jpeg', 'Fiolle_4.jpeg', 'Fiolle_5.jpeg'],
-        'Gand': ['Gand1.jpeg', 'Gand2.jpeg', 'Gand3.jpeg'],
+        'de Gand': ['Gand1.jpeg', 'Gand2.jpeg', 'Gand3.jpeg'],
         'Barthélémy': ['frere_1.jpeg', 'frere_2.jpeg', 'frere_3.jpeg', 'frere_4.jpeg', 'frere_5.jpeg']
     };
 

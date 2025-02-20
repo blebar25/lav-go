@@ -121,11 +121,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const items = images.map((img, i) => {
             // Préserver la casse du nom pour le chemin des images
             const baseName = laverie.name.replace('Laverie ', '');
-            const imgSrc = img.startsWith('http') ? img : `images/${baseName}/${img}`;
-            console.log('Loading image:', imgSrc); // Ajout du log
+            const imgSrc = img.startsWith('http') ? img : `/lav-go/images/${baseName}/${img}`;
             return `
                 <div class="carousel-item ${i === 0 ? 'active' : ''}">
-                    <img src="${imgSrc}" class="d-block w-100" alt="${laverie.name} - Image ${i + 1}" onerror="console.error('Failed to load:', this.src)">
+                    <img src="${imgSrc}" 
+                         class="d-block w-100" 
+                         alt="${laverie.name} - Image ${i + 1}"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517677208171-0bc6725a3e60';">
                 </div>
             `;
         }).join('');

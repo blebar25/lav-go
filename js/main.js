@@ -119,7 +119,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Créer les items du carrousel
         const items = images.map((img, i) => {
-            const imgSrc = img.startsWith('http') ? img : `images/${laverie.name.replace('Laverie ', '')}/${img}`;
+            // Utiliser le nom de base pour le chemin des images
+            const baseName = laverie.name.replace('Laverie ', '');
+            const imgSrc = img.startsWith('http') ? img : `images/${baseName}/${img}`;
             return `
                 <div class="carousel-item ${i === 0 ? 'active' : ''}">
                     <img src="${imgSrc}" class="d-block w-100" alt="${laverie.name} - Image ${i + 1}">

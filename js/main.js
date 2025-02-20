@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Schuman': ['MEB_1.jpg', 'MEB_2.jpg', 'MEB_3.jpg', 'MEB_4.jpg'],
         'Kleber': ['Kleber_1.jpeg', 'Kleber_2.jpeg', 'Kleber_3.jpeg', 'Kleber_4.jpeg', 'Kleber_5.jpeg', 'Kleber_6.jpeg', 'Kleber_7.jpeg', 'Kleber_8.jpeg'],
         'Fiolle': ['Fiolle_1.jpeg', 'Fiolle_2.jpeg', 'Fiolle_3.jpeg', 'Fiolle_4.jpeg', 'Fiolle_5.jpeg'],
-        'de Gand': ['Gand1.jpeg', 'Gand2.jpeg', 'Gand3.jpeg'],
+        'Gand': ['Gand1.jpeg', 'Gand2.jpeg', 'Gand3.jpeg'],
         'Barthélémy': ['frere_1.jpeg', 'frere_2.jpeg', 'frere_3.jpeg', 'frere_4.jpeg', 'frere_5.jpeg']
     };
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'Laverie Barthélémy', address: '17 rue des 3 frères Barthélémy, Marseille 13006' },
         { name: 'Laverie Dunkerque', address: '212 avenue de Dunkerque, Lambersart 59130' },
         { name: 'Laverie du Parc', address: '20 rue du Parc, La Madeleine 59110' },
-        { name: 'Laverie de Gand', address: '188 rue de Gand, Tourcoing 59200' },
+        { name: 'Laverie Gand', address: '188 rue de Gand, Tourcoing 59200' },
         { name: 'Laverie Moroy', address: '225 rue Pierre Moroy, Lille 59000' },
         { name: 'Laverie Drapiez', address: '25 rue du Augustin Drapiez, Lille 59000' },
         { name: 'Laverie Foch', address: '170 rue du Maréchal Foch, Loos 59120' }

@@ -135,23 +135,21 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-4">
                 <div class="laverie-card">
                     ${isRosiers(laverie.name) || isKleber(laverie.name) || isFranklin(laverie.name) ? '<span class="laverie-badge-2">Lessive offerte</span>' : ''}
-                    <div id="carousel-${index}" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carousel-${index}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-indicators">
                             ${indicators}
                         </div>
                         <div class="carousel-inner">
                             ${items}
                         </div>
-                        ${images.length > 1 ? `
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${index}" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-${index}" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        ` : ''}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${index}" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-${index}" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                     <div class="card-content">
                         <h4>${laverie.name}</h4>

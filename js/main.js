@@ -119,12 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Créer les items du carrousel
         const items = images.map((img, i) => {
-            // Utiliser le nom de base pour le chemin des images
+            // Préserver la casse du nom pour le chemin des images
             const baseName = laverie.name.replace('Laverie ', '');
             const imgSrc = img.startsWith('http') ? img : `images/${baseName}/${img}`;
+            console.log('Loading image:', imgSrc); // Ajout du log
             return `
                 <div class="carousel-item ${i === 0 ? 'active' : ''}">
-                    <img src="${imgSrc}" class="d-block w-100" alt="${laverie.name} - Image ${i + 1}">
+                    <img src="${imgSrc}" class="d-block w-100" alt="${laverie.name} - Image ${i + 1}" onerror="console.error('Failed to load:', this.src)">
                 </div>
             `;
         }).join('');

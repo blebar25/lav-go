@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-4">
                 <div class="laverie-card">
                     ${isRosiers(laverie.name) || isKleber(laverie.name) || isFranklin(laverie.name) ? '<span class="laverie-badge-2">Lessive offerte</span>' : ''}
-                    <div id="carousel-${index}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                    <div id="carousel-${index}" class="carousel slide" data-bs-interval="false">
                         <div class="carousel-indicators">
                             ${indicators}
                         </div>

@@ -42,18 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile menu handling
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-
-    if (navbarToggler && navbarCollapse) {
-        document.addEventListener('click', function(e) {
-            if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
-                navbarCollapse.classList.remove('show');
-            }
-        });
-    }
-
     // Configuration des images personnalisées pour les laveries
     const customImages = {
         'Cléry': ['IMG_1843.JPG', 'IMG_1845.JPG', 'IMG_1846.JPG', 'IMG_1847.JPG', 'IMG_1848.JPG'],
@@ -201,6 +189,72 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Insérer le HTML dans la page
         laveriesList.innerHTML = `<div class="row">${launderiesHTML}</div>`;
+    }
+
+    // Gestion du menu modal
+    const backdrop = document.createElement('div');
+    backdrop.className = 'modal-backdrop';
+    document.body.appendChild(backdrop);
+
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (navbarToggler && navbarCollapse) {
+        // Ajouter le bouton de fermeture
+        const closeButton = document.createElement('button');
+        closeButton.className = 'modal-close';
+        closeButton.setAttribute('aria-label', 'Fermer le menu');
+        navbarCollapse.appendChild(closeButton);
+
+        navbarToggler.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openMenu();
+        });
+
+        function openMenu() {
+            backdrop.classList.add('show');
+            navbarCollapse.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            backdrop.classList.remove('show');
+            navbarCollapse.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // Fermer avec le bouton de fermeture
+        closeButton.addEventListener('click', closeMenu);
+
+        // Fermer en cliquant sur le backdrop
+        backdrop.addEventListener('click', closeMenu);
+
+        // Fermer en cliquant sur un lien
+        document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .btn').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navbarCollapse.classList.contains('show')) {
+                closeMenu();
+            }
+        });
+
+        // Empêcher la fermeture quand on clique dans le menu
+        navbarCollapse.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Fermer en cliquant n'importe où sur la page sauf dans le menu
+        document.addEventListener('click', function(e) {
+            if (navbarCollapse.classList.contains('show') && 
+                !navbarCollapse.contains(e.target) && 
+                !navbarToggler.contains(e.target)) {
+                closeMenu();
+            }
+        });
     }
 
     // Initialiser les laveries au chargement de la page

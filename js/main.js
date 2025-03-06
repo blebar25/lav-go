@@ -53,12 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
         'Schuman': ['MEB_1.jpg', 'MEB_2.jpg', 'MEB_3.jpg', 'MEB_4.jpg'],
         'Kleber': ['Kleber_1.jpeg', 'Kleber_2.jpeg', 'Kleber_3.jpeg', 'Kleber_4.jpeg', 'Kleber_5.jpeg', 'Kleber_6.jpeg', 'Kleber_7.jpeg', 'Kleber_8.jpeg'],
         'Fiolle': ['Fiolle_1.jpeg', 'Fiolle_2.jpeg', 'Fiolle_3.jpeg', 'Fiolle_4.jpeg', 'Fiolle_5.jpeg'],
-        'Foch': ['Foch_1.jpeg', 'Foch_2.jpeg', 'Foch_3.jpeg'],
-        'Gand': ['Gand_1.jpeg', 'Gand_2.jpeg', 'Gand_3.jpeg'],
-        'Lambersart': ['Lambersart_1.jpeg', 'Lambersart_2.jpeg', 'Lambersart_3.jpeg'],
-        'Drapiez': ['Drapiez_1.jpeg', 'Drapiez_2.jpeg', 'Drapiez_3.jpeg', 'Drapiez_4.jpeg'],
+        'Barthélémy': ['frere_1.jpeg', 'frere_2.jpeg', 'frere_3.jpeg', 'frere_4.jpeg', 'frere_5.jpeg'],
         'du Parc': ['du Parc_1.jpeg', 'du Parc_2.jpeg', 'du Parc_3.jpeg'],
-        'Barthélémy': ['frere_1.jpeg', 'frere_2.jpeg', 'frere_3.jpeg', 'frere_4.jpeg', 'frere_5.jpeg']
+        'Gand': ['Gand_1.jpeg', 'Gand_2.jpeg', 'Gand_3.jpeg'],
+        'Moroy': ['Moroy_1.jpeg', 'Moroy_2.jpeg'],
+        'Drapiez': ['Drapiez_1.jpeg', 'Drapiez_2.jpeg', 'Drapiez_3.jpeg', 'Drapiez_4.jpeg'],
+        'Lambersart': ['Lambersart_1.jpeg', 'Lambersart_2.jpeg', 'Lambersart_3.jpeg'],
+        'Foch': ['Foch_1.jpeg', 'Foch_2.jpeg', 'Foch_3.jpeg']
     };
 
     // Images par défaut pour les laveries sans photos personnalisées
@@ -80,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'Laverie Kleber', address: '108 rue Kleber Prolongée, Marseille 13002' },
         { name: 'Laverie Fiolle', address: '14 rue du docteur Fiolle, Marseille 13006' },
         { name: 'Laverie Barthélémy', address: '17 rue des 3 frères Barthélémy, Marseille 13006' },
-        { name: 'Laverie Dunkerque', address: '212 avenue de Dunkerque, Lambersart 59130' },
         { name: 'Laverie du Parc', address: '20 rue du Parc, La Madeleine 59110' },
         { name: 'Laverie Gand', address: '188 rue de Gand, Tourcoing 5900' },
         { name: 'Laverie Moroy', address: '225 rue Pierre Moroy, Lille 59000' },
